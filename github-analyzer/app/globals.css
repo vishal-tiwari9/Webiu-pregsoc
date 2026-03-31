@@ -1,0 +1,43 @@
+:root {
+  --bg: #070b11;
+  --bg2: #0c1220;
+  --bg3: #111927;
+  --border: #1a2840;
+  --border2: #203050;
+  --text: #e8f0fe;
+  --text2: #7a9cc0;
+  --text3: #3d5570;
+  --accent: #00d4ff;
+  --green: #00e5a0;
+  --amber: #ffb347;
+  --red: #ff5f6d;
+  --purple: #b060ff;
+  --card: #0c1828;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:1; } }
+.fade-up { animation: fadeUp .5s ease forwards; }
